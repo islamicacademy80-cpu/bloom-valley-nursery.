@@ -6,6 +6,7 @@
   <meta name="description" content="Contact Bloom Valley Nursery with a question or order inquiry.">
   <title>Contact and Order Inquiries | Bloom Valley Nursery</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -25,20 +26,24 @@
     <section aria-labelledby="form-heading">
       <h2 id="form-heading">Send Us a Message</h2>
       <p>Fields marked with an asterisk (*) are required.</p>
-      <form action="#" method="post">
+      <p id="prefill-note" class="form-note" role="status"></p>
+      <form action="#" method="post" id="inquiry-form" novalidate>
         <fieldset>
           <legend>Your Contact Information</legend>
           <p>
             <label for="name">Full name *</label><br>
-            <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
+            <input type="text" id="name" name="name" required minlength="2" autocomplete="name" aria-describedby="name-error">
+            <span class="error-message" id="name-error"></span>
           </p>
           <p>
             <label for="email">Email address *</label><br>
-            <input type="email" id="email" name="email" required autocomplete="email">
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
+            <span class="error-message" id="email-error"></span>
           </p>
           <p>
             <label for="phone">Phone number (optional, format 555-555-5555)</label><br>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="555-555-5555" autocomplete="tel">
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="555-555-5555" autocomplete="tel" aria-describedby="phone-error">
+            <span class="error-message" id="phone-error"></span>
           </p>
         </fieldset>
 
@@ -46,21 +51,24 @@
           <legend>Your Inquiry</legend>
           <p>
             <label for="topic">What is your inquiry about? *</label><br>
-            <select id="topic" name="topic" required>
+            <select id="topic" name="topic" required aria-describedby="topic-error">
               <option value="">Choose a topic</option>
               <option value="plants">Plants</option>
               <option value="trees">Trees</option>
               <option value="supplies">Gardening supplies</option>
               <option value="order">Placing an order</option>
             </select>
+            <span class="error-message" id="topic-error"></span>
           </p>
           <p>
             <label for="quantity">Quantity (for orders)</label><br>
-            <input type="number" id="quantity" name="quantity" min="1" max="100">
+            <input type="number" id="quantity" name="quantity" min="1" max="100" aria-describedby="quantity-error">
+            <span class="error-message" id="quantity-error"></span>
           </p>
           <p>
             <label for="message">Your message *</label><br>
-            <textarea id="message" name="message" rows="5" cols="40" required minlength="10" maxlength="500"></textarea>
+            <textarea id="message" name="message" rows="5" cols="40" required minlength="10" maxlength="500" aria-describedby="message-error"></textarea>
+            <span class="error-message" id="message-error"></span>
           </p>
         </fieldset>
 
@@ -68,7 +76,12 @@
           <input type="checkbox" id="updates" name="updates" value="yes">
           <label for="updates">Send me news about nursery events and seasonal plants</label>
         </p>
+        <p>
+          <input type="checkbox" id="remember" name="remember" value="yes">
+          <label for="remember">Remember my name and email on this device</label>
+        </p>
         <button type="submit">Send Message</button>
+        <p id="form-status" class="form-status" role="status"></p>
       </form>
     </section>
 

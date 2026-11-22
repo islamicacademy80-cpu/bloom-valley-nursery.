@@ -6,6 +6,7 @@
   <meta name="description" content="Shop trees, houseplants, and gardening supplies from Bloom Valley Nursery.">
   <title>Plants, Trees &amp; Supplies | Bloom Valley Nursery</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -29,10 +30,10 @@
         <img src="images/apple-tree.png" alt="A mature apple tree with red apples hanging from its branches">
         <figcaption>Apple trees: a local favorite that gives blossoms in spring and fresh fruit in fall.</figcaption>
       </figure>
-      <ul>
-        <li>Apple tree</li>
-        <li>Birch tree</li>
-        <li>Maple tree</li>
+      <ul class="product-list">
+        <li data-product-id="apple-tree">Apple tree</li>
+        <li data-product-id="birch-tree">Birch tree</li>
+        <li data-product-id="maple-tree">Maple tree</li>
       </ul>
     </section>
 
@@ -40,22 +41,29 @@
       <h2 id="plants-heading">Plants</h2>
       <p>Low-maintenance plants that are perfect for beginners and busy gardeners.</p>
       <img src="images/spider-plant.png" alt="A green and white striped spider plant in a hanging pot">
-      <ul>
-        <li>Aloe vera plant</li>
-        <li>Spider plant</li>
-        <li>String of pearls plant</li>
+      <ul class="product-list">
+        <li data-product-id="aloe-vera">Aloe vera plant</li>
+        <li data-product-id="spider-plant">Spider plant</li>
+        <li data-product-id="string-of-pearls">String of pearls plant</li>
       </ul>
     </section>
 
     <section aria-labelledby="supplies-heading">
       <h2 id="supplies-heading">Gardening Supplies</h2>
       <p>Quality tools and supplies to help your garden thrive.</p>
-      <ul>
-        <li>Birdhouse</li>
-        <li>Potting soil</li>
-        <li>Watering can</li>
+      <ul class="product-list">
+        <li data-product-id="birdhouse">Birdhouse</li>
+        <li data-product-id="potting-soil">Potting soil</li>
+        <li data-product-id="watering-can">Watering can</li>
       </ul>
       <p>Want to place an order? <a href="contact.html">Send us an order inquiry</a>.</p>
+    </section>
+    <section aria-labelledby="saved-heading">
+      <h2 id="saved-heading">My Saved Items</h2>
+      <p id="saved-message">You have not saved any items yet. Choose Save next to an item to build your list.</p>
+      <ul id="saved-list" class="product-list"></ul>
+      <p><button type="button" id="clear-saved" hidden>Clear all saved items</button></p>
+      <p><a href="contact.html">Send an inquiry about my saved items</a></p>
     </section>
   </main>
 

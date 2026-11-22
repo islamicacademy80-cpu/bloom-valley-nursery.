@@ -251,7 +251,7 @@ footer p {
   }
 
   form > p,
-  button {
+  form > button {
     flex-basis: 100%;
   }
 
@@ -261,4 +261,80 @@ footer p {
     justify-content: space-between;
     padding: 1.5rem 2rem;
   }
+}
+
+/* ---------- Touchstone 4: interactive feature and validation ---------- */
+
+/* Saved-items lists: name on the left, button on the right */
+.product-list {
+  max-width: 28rem;
+  padding: 0;
+  list-style: none;
+}
+
+.product-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #014038;
+}
+
+.save-button,
+.remove-saved,
+#clear-saved {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.9rem;
+  font-size: 1rem;
+}
+
+.save-button {
+  color: #014038;
+  background-color: #F7F7F7;
+}
+
+.save-button[aria-pressed="true"] {
+  color: #014038;
+  background-color: #F0C06D;
+}
+
+.remove-saved {
+  color: #014038;
+  background-color: #F7F7F7;
+}
+
+/* Error messages sit directly under the field they describe */
+.error-message {
+  display: block;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: bold;
+  color: #00231C;
+  background-color: #F0C06D;
+  border-left: 6px solid #014038;
+}
+
+.error-message:empty {
+  display: none;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-width: 4px;
+  border-color: #00231C;
+}
+
+.form-note,
+.form-status {
+  font-weight: bold;
+  color: #014038;
+}
+
+.form-status:not(:empty) {
+  padding: 0.75rem;
+  border: 2px solid #014038;
+  border-left: 8px solid #F0C06D;
+  border-radius: 4px;
 }
